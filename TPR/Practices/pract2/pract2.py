@@ -86,7 +86,7 @@ for i in range(len(alternatives)):
 
         D = 0
         if N == P:
-            print(f"D{i+1}{j+1} P и N равны - ливаем")
+            print(f"D{i+1}{j+1} P и N равны")
             pass
 
         print(f"P{i + 1}{j + 1} = {Dij} = {P}")
@@ -133,3 +133,19 @@ df1 = pd.DataFrame(arr)
 df1.index += 1
 df1.columns += 1
 print(df1)
+
+# Подсчет количества связей для каждой альтернативы
+connections = {}
+
+for i in range(len(arr)):
+    horizontal = sum(1 for x in arr[i] if x != 0 and x != 'X')
+    vertical = sum(1 for x in arr[:, i] if x != 0 and x != 'X')
+    connections[i + 1] = (horizontal, vertical)
+
+# Сортировка по количеству связей по горизонтали
+sorted_connections = sorted(connections.items(), key=lambda x: x[1][0], reverse=True)
+
+
+print("\nОтсортированные альтернативы:")
+for alt, (h, v) in sorted_connections:
+    print(f"{alt}:({h}, {v})")
