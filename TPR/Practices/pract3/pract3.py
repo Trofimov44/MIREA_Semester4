@@ -186,15 +186,11 @@ for i, col in enumerate(criteria_df.columns, start=1):
     elements = ' + '.join([f"{x:.3f}".rstrip('0').rstrip('.') if isinstance(x, float) else str(x) for x in criteria_df[col]])
     print(f"S_{i} = {elements} = {column_sum:.3f};")
 
-# ... (предыдущий код остается без изменений до вычисления W2i)
-
 # Вычисление и вывод P_i = S_i * W2i
 print("\nВычисление P_i:")
 for i, (s, w) in enumerate(zip(criteria_df.sum(), row_roots / sum_v), start=1):
     p = s * w
     print(f"P_{i} = S_{i} × W2{i} = {s:.3f} × {w:.3f} = {p:.2f};")
-
-# ... (остальной код остается без изменений)
 
 # Вычисление λ_max, ИС и ОС
 n = 4  # Количество критериев
@@ -217,8 +213,6 @@ if OC <= 0.10:
     print("Значение ОС меньше или равно 0.10 → матрица согласована.")
 else:
     print("Значение ОС превышает 0.10 → требуется пересмотр матрицы.")
-
-# ... (после вывода W_K1i)
 
 # --- Расчёты для K1 ---
 n_k1 = 5  # Количество альтернатив
@@ -249,9 +243,6 @@ if OC_k1 <= 0.10:
     print("ОС_K1 ≤ 0.10 → матрица K1 согласована.")
 else:
     print("ОС_K1 > 0.10 → требуется пересмотр матрицы K1.")
-
-
-# ... (после вывода W_K2i)
 
 # --- Расчёты для K2 ---
 n_k2 = 5  # Количество альтернатив
@@ -284,8 +275,6 @@ else:
     print("ОС_K2 > 0.10 → требуется пересмотр матрицы K2.")
 
 
-# ... (после вывода W_K3i)
-
 # --- Расчёты для K3 ---
 n_k3 = 5  # Количество альтернатив
 SI_k3 = 1.12  # СИ для n=5
@@ -315,8 +304,6 @@ if OC_k3 <= 0.10:
     print("ОС_K3 ≤ 0.10 → матрица K3 согласована.")
 else:
     print("ОС_K3 > 0.10 → требуется пересмотр матрицы K3.")
-
-# ... (после вывода W_K4i)
 
 # --- Расчёты для K4 ---
 n_k4 = 5  # Количество альтернатив
@@ -356,8 +343,8 @@ print(f"W3K2Y = ({'; '.join(k2_w_values)});")
 print(f"W3K3Y = ({'; '.join(k3_w_values)});")
 print(f"W3K4Y = ({'; '.join(k4_w_values)});")
 
-# Рассчет W1, W2, W3, W4
-print("\nРассчет W1, W2, W3, W4:")
+# Рассчет W1, W2, W3, W4, W5
+print("\nРассчет W1, W2, W3, W4, W5:")
 
 # Преобразование строковых значений W в числовые
 W2i = list(map(float, w_values))
@@ -366,14 +353,27 @@ W3K2Y = list(map(float, k2_w_values))
 W3K3Y = list(map(float, k3_w_values))
 W3K4Y = list(map(float, k4_w_values))
 
-# Формулы для W1, W2, W3, W4
-W1 = sum(W2i[i] * W3K1Y[i] for i in range(len(W2i)))
-W2 = sum(W2i[i] * W3K2Y[i] for i in range(len(W2i)))
-W3 = sum(W2i[i] * W3K3Y[i] for i in range(len(W2i)))
-W4 = sum(W2i[i] * W3K4Y[i] for i in range(len(W2i)))
+# Формулы для W1, W2, W3, W4, W5
+W1 = sum(W2i[j] * W for j, W in enumerate([W3K1Y[0], W3K2Y[0], W3K3Y[0], W3K4Y[0]]))
+W2 = sum(W2i[j] * W for j, W in enumerate([W3K1Y[1], W3K2Y[1], W3K3Y[1], W3K4Y[1]]))
+W3 = sum(W2i[j] * W for j, W in enumerate([W3K1Y[2], W3K2Y[2], W3K3Y[2], W3K4Y[2]]))
+W4 = sum(W2i[j] * W for j, W in enumerate([W3K1Y[3], W3K2Y[3], W3K3Y[3], W3K4Y[3]]))
+W5 = sum(W2i[j] * W for j, W in enumerate([W3K1Y[4], W3K2Y[4], W3K3Y[4], W3K4Y[4]]))
 
 # Вывод результатов
-print(f"W1 = {' + '.join([f'{W2i[i]:.3f} × {W3K1Y[i]:.3f}' for i in range(len(W2i))])} = {W1:.3f}")
-print(f"W2 = {' + '.join([f'{W2i[i]:.3f} × {W3K2Y[i]:.3f}' for i in range(len(W2i))])} = {W2:.3f}")
-print(f"W3 = {' + '.join([f'{W2i[i]:.3f} × {W3K3Y[i]:.3f}' for i in range(len(W2i))])} = {W3:.3f}")
-print(f"W4 = {' + '.join([f'{W2i[i]:.3f} × {W3K4Y[i]:.3f}' for i in range(len(W2i))])} = {W4:.3f}")
+print(f"W1 = {' + '.join([f'{W2i[j]:.3f} × {W:.3f}' for j, W in enumerate([W3K1Y[0], W3K2Y[0], W3K3Y[0], W3K4Y[0]])])} = {W1:.3f}")
+print(f"W2 = {' + '.join([f'{W2i[j]:.3f} × {W:.3f}' for j, W in enumerate([W3K1Y[1], W3K2Y[1], W3K3Y[1], W3K4Y[1]])])} = {W2:.3f}")
+print(f"W3 = {' + '.join([f'{W2i[j]:.3f} × {W:.3f}' for j, W in enumerate([W3K1Y[2], W3K2Y[2], W3K3Y[2], W3K4Y[2]])])} = {W3:.3f}")
+print(f"W4 = {' + '.join([f'{W2i[j]:.3f} × {W:.3f}' for j, W in enumerate([W3K1Y[3], W3K2Y[3], W3K3Y[3], W3K4Y[3]])])} = {W4:.3f}")
+print(f"W5 = {' + '.join([f'{W2i[j]:.3f} × {W:.3f}' for j, W in enumerate([W3K1Y[4], W3K2Y[4], W3K3Y[4], W3K4Y[4]])])} = {W5:.3f}")
+
+# Приоритеты альтернатив
+print("\nПриоритеты альтернатив:")
+alternatives_names = [alt['name'] for alt in alternatives]
+for i, W in enumerate([W1, W2, W3, W4, W5], start=1):
+    print(f"Альтернатива {alternatives_names[i-1]} - W{i} приоритет равен {W:.3f}")
+
+# Определение лучшей альтернативы
+best_index = max(range(len([W1, W2, W3, W4, W5])), key=lambda i: [W1, W2, W3, W4, W5][i])
+best_alternative = alternatives_names[best_index]
+print(f"\nЛучшая альтернатива: {best_alternative} с W = {[W1, W2, W3, W4, W5][best_index]:.3f}")
