@@ -1,0 +1,10 @@
+ckeditor
+django
+dotenv
+main
+os
+pathlib
+simple_history
+sys
+time
+tinymce

@@ -1,0 +1,94 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.16 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36" version="26.0.16">
+  <diagram name="Страница — 1" id="7K1EFk29ftSMJnt0QVcZ">
+    <mxGraphModel dx="1149" dy="789" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-5" value="Администратор" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="90" y="390" width="410" height="106" as="geometry" />
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-6" value="&lt;div&gt;- логин: String&lt;/div&gt;&lt;div&gt;- пароль: String&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="uNZHGMaiNZhY9uvdUQwh-5">
+          <mxGeometry y="26" width="410" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-8" value="&lt;div&gt;+ создатьРасписание(дата: Date, списокСпектаклей: List&amp;lt;Спектакль&amp;gt;)&lt;/div&gt;&lt;div&gt;+ изменитьРасписание(расписание: Расписание, новыеДанные: Map)&lt;/div&gt;" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="uNZHGMaiNZhY9uvdUQwh-5">
+          <mxGeometry y="66" width="410" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-9" value="Расписание&amp;nbsp;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="185" y="560" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-10" value="- дата: Date&lt;div&gt;- списокСпектаклей: List&amp;lt;Спектакль&amp;gt;&lt;/div&gt;" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="uNZHGMaiNZhY9uvdUQwh-9">
+          <mxGeometry y="26" width="220" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-12" value="+ сгенерироватьРасписание()" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="uNZHGMaiNZhY9uvdUQwh-9">
+          <mxGeometry y="70" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-13" value="Спектакль&amp;nbsp;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="185" y="730" width="220" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-14" value="&lt;div&gt;- название: String&lt;/div&gt;&lt;div&gt;- длительность: int&lt;/div&gt;&lt;div&gt;- дата: Date&lt;/div&gt;&lt;div&gt;- время: Time&lt;/div&gt;" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="uNZHGMaiNZhY9uvdUQwh-13">
+          <mxGeometry y="26" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-16" value="&lt;div&gt;+ добавитьДату(дата: Date)&lt;/div&gt;&lt;div&gt;+ изменитьВремя(время: Time)&lt;/div&gt;" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="uNZHGMaiNZhY9uvdUQwh-13">
+          <mxGeometry y="96" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-17" value="Актёр" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="50" y="940" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-18" value="&lt;div&gt;- имя: String&lt;/div&gt;&lt;div&gt;- роль: String&lt;/div&gt;&lt;div&gt;- стаж: int&lt;/div&gt;" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="uNZHGMaiNZhY9uvdUQwh-17">
+          <mxGeometry y="26" width="220" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-20" value="+ назначитьРоль(роль: String)" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="uNZHGMaiNZhY9uvdUQwh-17">
+          <mxGeometry y="80" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-21" value="Зритель&amp;nbsp;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="460" y="820" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-22" value="&lt;div&gt;- имя: String&lt;/div&gt;&lt;div&gt;- контакт: String&lt;/div&gt;&lt;div&gt;- билет: List&amp;lt;Билет&amp;gt;&lt;/div&gt;" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="uNZHGMaiNZhY9uvdUQwh-21">
+          <mxGeometry y="26" width="220" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-24" value="+ купитьБилет(спектакль: Спектакль)" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="uNZHGMaiNZhY9uvdUQwh-21">
+          <mxGeometry y="80" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-25" value="Билет&amp;nbsp;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1010" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-26" value="&lt;div&gt;- номер: int&lt;/div&gt;&lt;div&gt;- цена: float&lt;/div&gt;&lt;div&gt;- статус: String&lt;/div&gt;" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="uNZHGMaiNZhY9uvdUQwh-25">
+          <mxGeometry y="26" width="220" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-28" value="+ проверитьСтатус(): String" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="uNZHGMaiNZhY9uvdUQwh-25">
+          <mxGeometry y="80" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-29" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.489;exitY=1.004;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.483;entryY=-0.011;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="uNZHGMaiNZhY9uvdUQwh-8" target="uNZHGMaiNZhY9uvdUQwh-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="296.2000000000001" y="499.6700000000001" as="sourcePoint" />
+            <mxPoint x="293.8" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-30" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;entryX=0.501;entryY=1.025;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="uNZHGMaiNZhY9uvdUQwh-13" target="uNZHGMaiNZhY9uvdUQwh-12">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="420" y="810" as="sourcePoint" />
+            <mxPoint x="580" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-31" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.459;entryY=0.992;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="uNZHGMaiNZhY9uvdUQwh-17" target="uNZHGMaiNZhY9uvdUQwh-16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="490" y="960" as="sourcePoint" />
+            <mxPoint x="540" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-32" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0.645;entryY=0.987;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="uNZHGMaiNZhY9uvdUQwh-25" target="uNZHGMaiNZhY9uvdUQwh-16">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="350" y="1020" as="sourcePoint" />
+            <mxPoint x="490" y="960" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uNZHGMaiNZhY9uvdUQwh-33" value="" style="endArrow=none;html=1;rounded=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.353;entryY=1.021;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="uNZHGMaiNZhY9uvdUQwh-25" target="uNZHGMaiNZhY9uvdUQwh-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="430" y="1035" as="sourcePoint" />
+            <mxPoint x="556" y="965" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
